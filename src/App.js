@@ -1,9 +1,11 @@
 import "./App.css";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useLocalStorage } from './utils/input';
+
 
 function App (props) {
-  const [breed, setBreed] = useState('husky')
+  const [breed, setBreed] = useLocalStorage('breed', 'husky')
   const [images, setImages] = useState([])
 
   useEffect(() => {
